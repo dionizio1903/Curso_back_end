@@ -1,6 +1,6 @@
 
 
-<form action="?page=salvar" method="pos" class=" col-5 h-3 w-30 mx-auto p-5">
+<form action="?page=salvar" method="post" class=" col-5 h-3 w-30 mx-auto p-5">
 
     <input type="hidden" name="acao" value="cadastrar">
 

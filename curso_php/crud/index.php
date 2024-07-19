@@ -19,7 +19,7 @@
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               <a class="nav-link" href="?page=novo">Novo Usuario</a>
-              <a class="nav-link" href="?page=listar">Listar Usuario</a>
+              <a class="nav-link" href="?page=lista">Listar Usuario</a>
              
             </div>
           </div>
