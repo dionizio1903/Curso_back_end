@@ -1,5 +1,5 @@
 <?php 
-    $sql = "SELECT * FROM usuario WHERE id_usuario = ".$_REQUEST['id'];
+    $sql = "SELECT * FROM usuario WHERE id_usuario = ".$_REQUEST['id']."";
 
     $result = $conn->query($sql);
     $row = $result->fetch_object();    
@@ -32,3 +32,4 @@
     <button type="submit" class="btn btn-primary py-2 w-100">Enviar</button>
 
 </form>;
+
