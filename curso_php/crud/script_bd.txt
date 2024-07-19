@@ -1,0 +1,171 @@
+create database senac;
+
+use senac;
+	
+    create table vendas(
+    Id_vendas int not null primary key auto_increment,
+    cursos varchar(100) not null,
+    aluno varchar(100) not null,
+    cidade varchar(100) not null,
+    valor float(10,2)
+    );
+    
+    show tables;
+    
+    describe vendas;
+    
+    --------------------------------------------------
+
+
+    use senac;
+
+insert into vendas (cursos,aluno,cidade,valor) 
+values ('front end','marcia','tres lagoas',250.45),
+('computação grafica','leadro','corumba',600),
+('operador de computador','francisco','campo grande',200),
+('jogos digitais','enzo','campo grande',1000),
+('vitrinismo','maria','dourados',300);
+
+ 
+ select * from vendas;
+ 
+ select* from vendas order by aluno;
+ 
+ select	* from vendas
+ where cidade = 'campo grande';
+ 
+ update vendas set valor = 450 where id_vendas = 4;
+ 
+ delete from vendas where Id_vendas = 4;
+ 
+ drop tables vendedor;
+ 
+ truncate table vendas;
+ 
+ alter table vendas add column carga_horaria int;
+ 
+ alter table vendas drop column carga_horaria ;
+ 
+ alter table vendas modify column valor decimal (10,2);
+ 
+ desc vendas;
+ 
+ alter table vendas
+ rename column curso to cursos;
+  -------------------------------------------------------------
+
+  create table colaborador(
+id_colab int not null primary key auto_increment,
+nome varchar (100) not null,
+cpf varchar (45)  not null,
+data_nasc date
+);
+
+insert into colaborador(nome,cpf,data_nasc) values('mirosmar','123','1989-03-11');
+
+select * from colaborador; 
+
+alter table colaborador modify column cpf varchar(45) not null unique;
+
+delete from colaborador where id_colab = 1;
+
+desc colaborador;
+
+alter table colaborador
+add id_vendas int;
+
+alter table colaborador
+add constraint fk_vendas_colaborador foreign key (id_vendas) references vendas (id_vendas);
+
+------------------------------------------------------------------------
+
+create database loja_backend;
+
+use loja_backend;
+
+create table pessoas(
+id_pessoa int primary key not null auto_increment,
+nome varchar(100) not null,
+cpf int(11) not null unique,
+email varchar(100),
+celular int,
+rua varchar(100),
+numero int,
+cep int,
+estado varchar (100)
+);
+
+
+alter table pessoas add column id_categoria int primary key not null auto_increment;
+
+alter table pessoas
+add constraint fk_vendedor_pessoas foreign key (id_vendedor) references vendedor (id_vendedor);
+
+alter table pessoas modify column cpf int;
+
+insert into pessoas (nome,cpf,email,celular,rua,numero,cep,estado) 
+values ('joao',233,'maria@gmail.com',22222222,'rua',216,79000,'ms'),
+('francisco',3333,'pedro@gmail.com',333333,'mar',300,79160,'mg');
+
+select * from pessoas;
+
+
+alter table pessoas add column celular int(100);
+
+desc pessoas;
+
+create table produto (
+id_produto int primary key not null auto_increment,
+id_categoria int,
+produto varchar(100) not null,
+descricao varchar(100),
+qtd int not null,
+preco float(10,2)
+);
+
+alter table produto
+add constraint fk_categoria_produto foreign key (id_categoria) references categoria (id_categoria);
+
+create table categoria(
+id_categoria int primary key not null	auto_increment,
+categoria varchar(100)
+);
+ drop table categoria;
+alter table categoria add column id_categoria int primary key not null auto_increment;
+ 
+create table vendedor(
+id_vendedor int primary key not null auto_increment,
+id_pessoa int,
+salario float (10,2),
+comissao float(10,2)
+); 
+
+create table vendas(
+id_vendas int primary key not null auto_increment,
+id_pessoa int,
+id_produto int,
+id_categoria int
+);
+
+------------------------------------------------------------------------------
+select * from colaborador;
+select * from vendas;
+
+select nome,cursos
+from colaborador inner join vendas on 
+colaborador.id_colab = vendas.Id_vendas;
+
+-------------------------------------------------------------------------------
+
+create database usercadastro;
+
+use usercadastro;
+
+create table usuario(
+id_usuario int not null auto_increment primary key,
+nome varchar(100),
+email varchar(100)not null,
+senha varchar (100) not null,
+data_nasc date
+);
+select * from usuario;
