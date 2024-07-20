@@ -1,5 +1,5 @@
 <?php 
-
+include_once('db.php');
 switch ($_REQUEST['acao']) {
     case "cadastrar":
         $sql ="insert into usuario(nome,email,senha,data_nasc)
