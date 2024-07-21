@@ -1,4 +1,4 @@
-// cadastrar //
+
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -31,16 +31,15 @@
      <label class="form-check-label " for="inlineRadio2">Feminino</label>
    </div>
 
-   <div class="dropdown mb-3 ">
    
-     <button class="btn btn-primary dropdown- bg-dark mb-3 py-2 w-100" type="button" data-toggle="dropdown" name="estado_civil">Estado Civil</button>
-     <ul class="dropdown-menu py-2 w-100 text-center">
-       <li><a class=" text-white bg-dark mb-3 py-2 w-100" href="#" data-bs-toggle="dropdown"  >Solteiro</a></li>
-       <li><a class=" text-white bg-dark mb-3 py-2 w-100" href="#">Casado</a></li>
-       <li><a class=" text-white bg-dark mb-3 py-2 w-100" href="#">Divorciado</a></li>
-       <li><a class=" text-white bg-dark mb-3 py-2 w-100" href="#">União Estavel</a></li>
-     </ul>
-   </div>
+   
+  <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="estado_civil" aria-label="Default select example">
+  <option selected>Estado civil</option>
+  <option name="estado_civil" value="solteiro">Soltero</option>
+  <option name="estado_civil" value="casado">Casado</option>
+  <option name="estado_civil" value="divorciado">Divorciado</option>
+  </select>
+
 
 
    <div>
@@ -52,3 +51,5 @@
    <button type="submit" class="btn btn-primary py-2 w-100">Enviar</button>
 
  </form>
+
+ 

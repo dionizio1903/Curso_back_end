@@ -1,5 +1,6 @@
 <?php
 include_once('db.php');
+include_once('listar_aluno.php');
 switch ($_REQUEST['acao']) {
     case "cadastrar":
         $sql = "INSERT INTO aluno(nome,cpf,data_nasc,sexo,estado_civil,observacao)
@@ -11,9 +12,50 @@ switch ($_REQUEST['acao']) {
         }
         else{
             print("<script>alert('não foi possivel cadastrado!')</script>");
-        }
-       
+        }       
         break;
+
+        case "editar":
+            $nome = $_POST["nome"];    
+            $cpf = $_POST["cpf"];    
+            $data_nasc = $_POST["data_nasc"];    
+            $sexo = $_POST["genero"];
+            $estado_civil = $_POST["estado_civil"];
+            $observacao = $_POST["obs"];
+
+            $sql = "UPDATE aluno SET
+                nome = '{$nome}',
+                cpf = '{$cpf}',
+                data_nasc= '{$data_nasc}',
+                sexo = '{$sexo}',
+                estado_civil = '{$estado_civil}',
+                observacao = {$observacao}'
+                WHERE id_aluno = ".$_REQUEST['id'];
+    
+    $result = $conn->query($sql);
+
+    if($result==true){
+        print("<script>alert('Editado com sucesso!')</script>");
+        print("<script>location.href='?page=lista'</script>");
+    }
+    else{
+        print("<script>alert('não foi possivel editar!')</script>");
+    }
+    break;
+
+    case "excluir":
+        $sql = "DELETE FROM aluno WHERE id_aluno =" .$_REQUEST["id"];
+        
+        $result = $conn->query($sql);
+
+        if($result==true){
+            print("<script>alert('excluido com sucesso!')</script>");
+            print("<script>location.href='?page=lista'</script>");
+        }
+        else{
+            print("<script>alert('não foi possivel excluir!')</script>");
+        }  
+        break;  
     
     default:
         # code...

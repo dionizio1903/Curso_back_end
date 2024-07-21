@@ -30,6 +30,7 @@ switch ($_REQUEST['acao']) {
             WHERE id_usuario = ".$_REQUEST['id'];
 
 $result = $conn->query($sql);
+
 if($result==true){
     print("<script>alert('Editado com sucesso!')</script>");
     print("<script>location.href='?page=lista'</script>");
