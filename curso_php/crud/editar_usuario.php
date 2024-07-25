@@ -1,4 +1,6 @@
-<?php 
+<?php
+include_once('db.php'); 
+
     $sql = "SELECT * FROM usuario WHERE id_usuario = ".$_REQUEST['id']."";
 
     $result = $conn->query($sql);

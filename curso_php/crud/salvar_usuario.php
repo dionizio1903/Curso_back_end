@@ -1,5 +1,5 @@
 <?php 
-
+include_once('db.php');
 switch ($_REQUEST['acao']) {
     case "cadastrar":
         $sql ="insert into usuario(nome,email,senha,data_nasc)
@@ -30,6 +30,7 @@ switch ($_REQUEST['acao']) {
             WHERE id_usuario = ".$_REQUEST['id'];
 
 $result = $conn->query($sql);
+
 if($result==true){
     print("<script>alert('Editado com sucesso!')</script>");
     print("<script>location.href='?page=lista'</script>");
