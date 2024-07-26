@@ -1,4 +1,5 @@
 <?php
+//class de calculo
 class Retangulo{
 private $base;
 private $altura;

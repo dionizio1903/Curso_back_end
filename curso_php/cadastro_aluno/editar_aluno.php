@@ -27,7 +27,6 @@
      <label for="" class="form-label">Data de nascimento</label>
      <input type="date" name="data_nasc" class="form-control" value="<?php print $row->data_nasc ?>">
    </div>
-<<<<<<< HEAD
   <div>
     <label class="form-label">Qual e o Sexo:</label>
   </div>
@@ -39,16 +38,6 @@
    <div class="form-check form-check-inline mb-3  ">
      <input class="form-check-input" type="radio" name="genero"  id="fem" value ="feminino" <?php if ($row->sexo == 'feminino'){echo 'checked';} ?>> 
      <label class="form-check-label " for="fem">Feminino</label>
-=======
-
-   <div class="form-check form-check-inline mb-3 py-3  ">
-     <input class="form-check-input" type="radio" name="genero"  value="masculino <?php print $row->sexo ?>">
-     <label class="form-check-label" for="inlineRadio1">Masculino</label>
-   </div>
-   <div class="form-check form-check-inline mb-3  ">
-     <input class="form-check-input" type="radio" name="genero"  value="feminino <?php print $row->sexo ?>">
-     <label class="form-check-label " for="inlineRadio2">Feminino</label>
->>>>>>> a3dd44d2b9fe99ecf32273493a8eb30659d501e0
    </div>
 
    

@@ -6,7 +6,7 @@
     <title>Calcular a area do retangulo</title>
 </head>
 <body>
-<form class="" action="">    
+<form action="calc.php" method="post" class=" col-5 h-3 w-30 mx-auto p-5">    
 <div class="row g-3 align-items-center mb-3 py-5">
   <div class="col-auto  mb-3">
     <label for="" class="col-form-label mb-3">Altura</label>
