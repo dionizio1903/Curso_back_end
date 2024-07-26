@@ -15,8 +15,9 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+    <div>
+    <ul class="navbar-nav ">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="?page">Home</a>
         </li>
@@ -27,6 +28,13 @@
           <a class="nav-link active" aria-current="page" href="?page=lista">Lista de aluno</a>
         </li>        
       </ul>
+    </div>  
+    
+    <div>     
+      <input class="" type="search" name="pesquisar" placeholder="Search" aria-label="Search">
+      <button  class="btn btn-outline-success" type="submit">Search</button>
+    </div>
+  
     </div>
   </div>
 </nav>

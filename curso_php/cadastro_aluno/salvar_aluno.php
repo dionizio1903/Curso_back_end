@@ -1,11 +1,14 @@
 <?php
-include_once('db.php');
-include_once('listar_aluno.php');
+include_once("db.php");
+
 switch ($_REQUEST['acao']) {
+   
     case "cadastrar":
-        $sql = "INSERT INTO aluno(nome,cpf,data_nasc,sexo,estado_civil,observacao)
+        $sql = "INSERT INTO aluno (nome,cpf,data_nasc,sexo,estado_civil,observacao)
         values('{$_POST['nome']}', '{$_POST['cpf']}','{$_POST['data_nasc']}','{$_POST['genero']}','{$_POST['estado_civil']}','{$_POST['obs']}')";
+
         $result = $conn->query($sql);
+
         if($result==true){
             print("<script>alert('cadastrado com sucesso!')</script>");
             print("<script>location.href='?page=lista'</script>");
@@ -29,7 +32,7 @@ switch ($_REQUEST['acao']) {
                 data_nasc= '{$data_nasc}',
                 sexo = '{$sexo}',
                 estado_civil = '{$estado_civil}',
-                observacao = {$observacao}'
+                observacao = '{$observacao}'
                 WHERE id_aluno = ".$_REQUEST['id'];
     
     $result = $conn->query($sql);
@@ -57,12 +60,16 @@ switch ($_REQUEST['acao']) {
         }  
         break;  
     
+    case "pesquisar":
+        $sql = "SELECT nome FROM aluno WHERE nome = " .$_REQUEST['nome'];
+
+    $result = $conn->query($sql);
+    $row = $result->fetch_object(); 
+        
+
+
     default:
         # code...
         break;
 }
-
-
-
-
 
