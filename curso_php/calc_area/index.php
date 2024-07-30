@@ -8,25 +8,19 @@
    
 </head>
 <body>
-
-<form class="col-5 h-3 w-30 mx-auto p-5" action="calc.php"  method="post">
-  <div class="row mb-3">
-    <label  class="col-sm-2 col-form-label">Altura</label>
-    <div class="col-sm-10">
-      <input type="number" name="altura" class="form-control" >
-    </div>
+<form action="calc.php" method="post" class=" col-5 h-3 w-30 mx-auto p-5">    
+<div class="row g-3 align-items-center mb-3 py-5">
+  <div class="col-auto  mb-3">
+    <label for="" class="col-form-label mb-3">Altura</label>
+  
+    <input type="number" id="" class="form-control mb-3">
   </div>
-
-  <div class="row mb-3">
-    <label  class="col-sm-2 col-form-label">Largura</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" name="largura">
-    </div>
-  </div> 
+  <div class="col-auto mb-3 ">
+    <label for="" class="col-form-label">Largura</label>
   
-  <button type="submit" class="btn btn-primary" value="">Calcular</button>
-  
-
-</form>
+    <input type="number" id="" class="form-control" >
+  </div>
+  </form>
+</div>
 </body>
 </html>
