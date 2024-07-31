@@ -1,27 +1,28 @@
 <?php
-//class de calculo
-class Retangulo{
-private $base;
-private $altura;
-public function setBase($novaBase){
-$this->base=$novaBase;
-}
-public function getBase(){
-return $this->base;
-}
-public function setAltura($novaAltura){
-$this->altura = $novaAltura;
-}
-public function getAltura(){
-return $this->altura;
-}
-public function calcularArea(){
-return ($this->altura*$this->base);
-}
-public function calcularDiagonal(){
-return sqrt(pow($this->altura,2) + pow($this->base,2));
-}
-public function calcularPerimetro(){
-return ($this->altura*2 +$this->base*2) ;
-}
-}
+
+   $alt = $_POST['altura'];
+   $lar = $_POST['largura'];
+
+   class Retangulo{
+      public $alt;
+      public $lar;
+
+      public function __construct($alt,$lar){
+         $this->alt = $alt;
+         $this->lar = $lar;
+      }
+
+      public function calc_Area(){
+         return ($this->alt*$this->lar);
+      }
+
+      public function calc_perimetro(){
+         return 2 * ($this->alt + $this->lar); 
+      }
+   }
+
+   $q1 = new Retangulo($alt,$lar);
+   $resultado = $q1->calc_Area();
+   $res = $q1->calc_perimetro();
+   echo $resultado . '<br>';
+   echo $res;
