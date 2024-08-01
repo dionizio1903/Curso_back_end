@@ -88,6 +88,12 @@ class Produto{
     
     }
 
+    public function excluir(){
+        $sql = "DELETE FROM produtos WHERE id_produto = ".$_REQUEST["id"];
+
+        $this->conn->getConexao()->query($sql);
+        
+    }
 
 
 }
