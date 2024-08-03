@@ -50,7 +50,7 @@
                     include('conexao.php');
                     include('evento.php');
 
-                    $pdt = new Evento();
+                    $eve = new Evento();
 
                     match (@$_REQUEST['page']) {
                         'novo' => include('novo_cadastro.php'),
