@@ -14,6 +14,7 @@
             }else{
                 print ("<script>alert('Nao foi possivel cadastrar!')</script>");
             } 
+            break;  
 
             case 'cadPalestra':
                 $eve->inserirPales();
@@ -23,7 +24,21 @@
                     print("<script>location.href='?page=listar'</script>");
                 }else{
                     print ("<script>alert('Nao foi possivel cadastrar!')</script>");
-                }     
+                }
             
+            
+            case 'ediparticipante':
+                $eve->atualizarParticipante();
+    
+                if ($eve==true) {
+                    print("<script>alert('Editado com sucesso!')</script>");
+                    print("<script>location.href='?page=listar'</script>");
+                }else{
+                    print ("<script>alert('Nao foi possivel editar!')</script>");
+                }
+                break;
+
+                
+        
         }
 

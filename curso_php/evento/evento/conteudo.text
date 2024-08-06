@@ -48,7 +48,7 @@ select 'tabela.col1', 'outra_tabela.col2' from 'tabela' join 'outra tabela' on c
  // ordernar por nome
 select 'tabela.col1', 'outra_tabela.col2' from 'tabela' inner join 'outra tabela' on chave primary 'tabela.id' = foreign 'tabela.id ou coluna' order by tabela.nome ;
 
-//apelidos de colunas
+//apelidos de tabela
 select 't.col1', 'o_t.col2' from 'tabela' AS inner join 'outra tabela' AS on chave primary 't.id' = foreign 't.id ou coluna' order by t.nome ;
 
 //mostrar tudo o que tem a esquerda da tabela  

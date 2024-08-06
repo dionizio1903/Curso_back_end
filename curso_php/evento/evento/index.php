@@ -55,6 +55,8 @@
                     match (@$_REQUEST['page']) {
                         'novo' => include('novo_cadastro.php'),
                         'salvar'=> include('salvar_ev.php'),
+                        'editar'=>include('editar.php') ,
+                        'listar'=> $eve->listar(),
                         default =>print('Bem vindo!')
                     }
                 
