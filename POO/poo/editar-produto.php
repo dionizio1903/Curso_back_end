@@ -3,7 +3,7 @@
 <?php 
     $sql = "SELECT * FROM produtos WHERE id_produto = " . $_REQUEST['id'];
      
-    $conn = new Conexao();
+    $conn = new $Conexao();
 
     $result = $conn->getConexao()->query($sql);
 
